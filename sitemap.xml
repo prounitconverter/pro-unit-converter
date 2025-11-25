@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
@@ -22,19 +22,25 @@
   <url>
     <loc>https://prounitconverter.site/privacy.html</loc>
     <lastmod>2025-11-25</lastmod>
-    <priority>0.70</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://prounitconverter.site/terms.html</loc>
     <lastmod>2025-11-25</lastmod>
-    <priority>0.70</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://prounitconverter.site/faq.html</loc>
     <lastmod>2025-11-25</lastmod>
     <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://prounitconverter.site/cookies.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.60</priority>
   </url>
 
   <url>
@@ -49,37 +55,6 @@
     <priority>0.60</priority>
   </url>
 
-  <url>
-    <loc>https://prounitconverter.site/cookies.html</loc>
-    <lastmod>2025-11-25</lastmod>
-    <priority>0.60</priority>
-  </url>
-
-  <!-- TOOLS -->
-  <url><loc>https://prounitconverter.site/length.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/temperature.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/speed.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/time.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/volume.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/area.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/data.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/energy.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/power.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/scientific.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
-  <url><loc>https://prounitconverter.site/age.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/gst.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/loan.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/discount.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/percentage.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/area-volume.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
-  <url><loc>https://prounitconverter.site/cooking.html</loc><lastmod>2025-11-25</lastmod><priority>0.80</priority></url>
-
-  <url>
-    <loc>https://prounitconverter.site/404.html</loc>
-    <lastmod>2025-11-25</lastmod>
-    <priority>0.20</priority>
-  </url>
+  <!-- ADD YOUR TOOL PAGES HERE -->
 
 </urlset>
-
-
