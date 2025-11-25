@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebApplication",
+  "name": "Length Converter — Pro Unit Converter",
+  "applicationCategory": "Calculator",
+  "operatingSystem": "All",
+  "url": "https://prounitconverter.site/length.html",
+  "description": "Free Length Converter to convert meters, feet, inches, cm, mm, km and more instantly.",
+  "creator": {
+    "@type": "Organization",
+    "name": "Pro Unit Converter",
+    "url": "https://prounitconverter.site/"
+  }
+}
+</script>
