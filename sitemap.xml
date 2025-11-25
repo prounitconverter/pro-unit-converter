@@ -1,75 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- MAIN PAGES -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://prounitconverter.site/</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/about.html</loc>
+    <loc>https://prounitconverter.site/about.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/contact.html</loc>
+    <loc>https://prounitconverter.site/contact.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/faq.html</loc>
+    <loc>https://prounitconverter.site/privacy.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/privacy.html</loc>
+    <loc>https://prounitconverter.site/terms.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/terms.html</loc>
+    <loc>https://prounitconverter.site/faq.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/cookie.html</loc>
-    <priority>0.70</priority>
+    <loc>https://prounitconverter.site/disclaimer.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.60</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/disclaimer.html</loc>
-    <priority>0.70</priority>
+    <loc>https://prounitconverter.site/dmca.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.60</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/dmca.html</loc>
-    <priority>0.70</priority>
+    <loc>https://prounitconverter.site/cookies.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.60</priority>
   </url>
+
+  <!-- TOOLS -->
+  <url><loc>https://prounitconverter.site/length.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/temperature.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/speed.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/time.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/volume.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/area.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/data.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/energy.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/power.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/scientific.html</loc><lastmod>2025-11-25</lastmod><priority>0.90</priority></url>
+  <url><loc>https://prounitconverter.site/age.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/gst.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/loan.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/discount.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/percentage.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/area-volume.html</loc><lastmod>2025-11-25</lastmod><priority>0.85</priority></url>
+  <url><loc>https://prounitconverter.site/cooking.html</loc><lastmod>2025-11-25</lastmod><priority>0.80</priority></url>
 
   <url>
-    <loc>https://yourdomain.com/sitemap.html</loc>
-    <priority>0.70</priority>
+    <loc>https://prounitconverter.site/404.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.20</priority>
   </url>
-
-
-  <!-- ALL TOOLS -->
-  <url><loc>https://yourdomain.com/length.html</loc></url>
-  <url><loc>https://yourdomain.com/temperature.html</loc></url>
-  <url><loc>https://yourdomain.com/speed.html</loc></url>
-  <url><loc>https://yourdomain.com/time.html</loc></url>
-  <url><loc>https://yourdomain.com/volume.html</loc></url>
-  <url><loc>https://yourdomain.com/area.html</loc></url>
-  <url><loc>https://yourdomain.com/data.html</loc></url>
-  <url><loc>https://yourdomain.com/energy.html</loc></url>
-  <url><loc>https://yourdomain.com/power.html</loc></url>
-  <url><loc>https://yourdomain.com/scientific.html</loc></url>
-  <url><loc>https://yourdomain.com/age.html</loc></url>
-  <url><loc>https://yourdomain.com/gst.html</loc></url>
-  <url><loc>https://yourdomain.com/loan.html</loc></url>
-  <url><loc>https://yourdomain.com/discount.html</loc></url>
-  <url><loc>https://yourdomain.com/percentage.html</loc></url>
-  <url><loc>https://yourdomain.com/area-volume.html</loc></url>
-  <url><loc>https://yourdomain.com/cooking.html</loc></url>
 
 </urlset>
+
+
