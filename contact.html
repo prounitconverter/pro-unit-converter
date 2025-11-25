@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact Us — Pro Unit Converter</title>
+
+<meta name="description" content="Contact Pro Unit Converter for feedback, support, partnerships, suggestions or technical issues. We respond quickly and value all user feedback.">
+<meta name="keywords" content="contact pro unit converter, support, customer help, feedback form">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Contact Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="logo.png" width="40" height="40" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button class="btn" id="darkModeToggle">🌙</button>
+</header>
+
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › <span>Contact Us</span>
+</nav>
+
+<main class="container">
+
+<section class="card">
+  <h1 class="section-title">Contact Us</h1>
+  <p>
+    Have a question, suggestion, idea, partnership request, or need support?
+    We would love to hear from you.  
+    Pro Unit Converter is committed to improving user experience and responding quickly.
+  </p>
+</section>
+
+<section class="card">
+  <h2 class="section-title">Get in Touch</h2>
+
+  <p style="margin-bottom: 20px;">
+    Please fill out the form below and we will get back to you promptly.
+  </p>
+
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been submitted.');">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Your Message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2 class="section-title">Other Contact Options</h2>
+
+  <p><strong>Email Support:</strong> prounitconverter@gmail.com</p>
+  <p><strong>Business / Partnerships:</strong> bprounitconverter@gmail.com</p>
+  <p><strong>Report a Bug:</strong> prounitconverter@gmail.com</p>
+
+  <p style="margin-top: 10px;">
+    (You can replace these emails with your own contact email.)
+  </p>
+</section>
+
+<section class="card">
+  <h2 class="section-title">Why Contact Us?</h2>
+
+  <ul style="line-height: 1.7; color: var(--muted);">
+    <li>✔ Suggest new converters or calculators</li>
+    <li>✔ Report bugs or incorrect results</li>
+    <li>✔ Request features or improvements</li>
+    <li>✔ Business, advertising or partnership inquiries</li>
+    <li>✔ General feedback to improve the platform</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter. All Rights Reserved.</p>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

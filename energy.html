@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Energy Converter — Joules, Calories, kWh & BTU | Pro Unit Converter</title>
+
+<meta name="description" content="Free Energy Converter — Convert Joules (J), Calories (cal), Kilowatt-hours (kWh) and more. Perfect for physics, electrical energy, nutrition and scientific calculations.">
+<meta name="keywords" content="energy converter, joules converter, calories to joules, joules to kwh, btu to joules, physics calculator, electrical energy converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Energy Converter — Joules, Calories, kWh">
+<meta property="og:description" content="Convert Joules, Calories and kWh instantly. Accurate energy conversion for science, physics and electricity calculations.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://yourwebsite.com/energy.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Energy Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Energy Converter</h1>
+    <p class="lead">
+      Convert Joules (J), Calories (cal), Kilowatt-hours (kWh) and BTU with scientific precision.  
+      Ideal for physics, nutrition, electrical calculations and engineering.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Energy Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="energyValue">Value</label>
+      <input id="energyValue" type="number" placeholder="Enter value">
+
+      <label for="fromEnergy">From</label>
+      <select id="fromEnergy">
+        <option value="J">Joule (J)</option>
+        <option value="cal">Calorie (cal)</option>
+        <option value="kWh">Kilowatt-hour (kWh)</option>
+        <option value="BTU">BTU</option>
+      </select>
+
+      <label for="toEnergy">To</label>
+      <select id="toEnergy">
+        <option value="J">Joule (J)</option>
+        <option value="cal">Calorie (cal)</option>
+        <option value="kWh">Kilowatt-hour (kWh)</option>
+        <option value="BTU">BTU</option>
+      </select>
+
+      <button id="energyConvertBtn" class="convert-btn">Convert</button>
+
+      <div class="result-box">
+        <div id="energyResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section class="card">
+    <h2>How Energy Conversion Works</h2>
+    <p>
+      Energy can be measured using different units depending on the field of study.  
+      Joules are used in physics, calories are used in nutrition and heat,  
+      while kilowatt-hours are used in electrical energy billing.
+    </p>
+    <p>
+      This tool converts accurately between all major energy units using  
+      internationally accepted scientific constants.
+    </p>
+
+    <ul>
+      <li><strong>1 calorie = 4.184 Joules</strong></li>
+      <li><strong>1 kWh = 3.6 million Joules</strong></li>
+      <li><strong>1 BTU = 1055.06 Joules</strong></li>
+    </ul>
+
+    <p>
+      Whether you're a student, engineer, electrician, or nutritionist,  
+      this converter ensures fast and precise results.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Energy Converter</h2>
+
+    <div class="faq">
+      <h3>1. How many joules are in 1 calorie?</h3>
+      <p>1 thermochemical calorie = <strong>4.184 J</strong>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. What is the most accurate energy unit?</h3>
+      <p>The SI unit of energy is the Joule (J). All other units convert to Joules.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. What is kWh commonly used for?</h3>
+      <p>Kilowatt-hours are used to measure electrical energy consumption (home electricity bills).</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Are calories and food calories the same?</h3>
+      <p>Food labels use “Calorie (kcal)”, which equals 1000 small calories.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Is this converter accurate for physics?</h3>
+      <p>Yes, the formulas use standard energy constants used in scientific calculations.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// ENERGY CONVERSION SCRIPT
+document.getElementById('energyConvertBtn').addEventListener('click', () => {
+
+  const v = parseFloat(document.getElementById('energyValue').value);
+  const from = document.getElementById('fromEnergy').value;
+  const to = document.getElementById('toEnergy').value;
+  const out = document.getElementById('energyResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  // Conversion constants (Joule base)
+  const table = {
+    J: 1,
+    cal: 4.184,
+    kWh: 3600000,
+    BTU: 1055.06
+  };
+
+  const joules = v * table[from];
+  const res = joules / table[to];
+
+  out.textContent = `${v} ${from} = ${res.toFixed(2)} ${to}`;
+});
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How many joules are in 1 calorie?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "1 thermochemical calorie equals 4.184 joules."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the SI unit of energy?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Joule (J) is the official SI unit of energy."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

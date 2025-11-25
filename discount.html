@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Discount Calculator — Calculate Savings, Final Price & Percent Off | Pro Unit Converter</title>
+
+<meta name="description" content="Free Discount Calculator — Instantly calculate discount amount, percent savings and final price after discount. Useful for shopping, eCommerce, business, marketing and retail offers.">
+<meta name="keywords" content="discount calculator, sale price calculator, savings calculator, final price calculator, percent off calculator, shopping calculator">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Discount Calculator — Savings & Final Price">
+<meta property="og:description" content="Calculate discount amount, percent savings and final price instantly.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/discount.html">
+
+<link rel="canonical" href="https://yourwebsite.com/discount.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Discount Calculator</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Discount Calculator</h1>
+    <p class="lead">
+      Quickly calculate discount amount, percent savings and final price after a discount.  
+      Ideal for shopping, retail offers, eCommerce pricing and business calculations.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Discount Calculator Tool</h2>
+
+    <div class="converter">
+
+      <label for="orig">Original Price</label>
+      <input id="orig" type="number" placeholder="Original price">
+
+      <label for="disc">Discount Percentage (%)</label>
+      <input id="disc" type="number" placeholder="Discount %">
+
+      <button id="discBtn" class="convert-btn">Calculate Discount</button>
+
+      <div class="result-box">
+        <div id="discResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section class="card">
+    <h2>How the Discount Calculator Works</h2>
+    <p>
+      This discount tool helps you instantly compute the amount saved and the final price 
+      after applying a discount. Whether you're calculating shopping deals, online sale prices, 
+      business promotions or seasonal discounts, this tool is fast and accurate.
+    </p>
+
+    <ul>
+      <li><strong>Original Price:</strong> The starting price before discount.</li>
+      <li><strong>Discount %:</strong> The percentage you want to reduce.</li>
+      <li><strong>Discount Amount:</strong> How much money you save.</li>
+      <li><strong>Final Price:</strong> Total price after applying discount.</li>
+    </ul>
+
+    <p>
+      The calculator is widely used by shoppers, eCommerce sellers, business owners, 
+      marketers, accountants and students.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Discount Calculator</h2>
+
+    <div class="faq">
+      <h3>1. How do I calculate discount amount?</h3>
+      <p>Discount = Original Price × (Discount % ÷ 100). This tool calculates it automatically.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Can I calculate multiple discounts?</h3>
+      <p>Apply them one by one. For example: 20% off, then another 10% off.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Does the tool support tax calculations?</h3>
+      <p>Not yet, but a tax calculator page is planned.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does rounding affect accuracy?</h3>
+      <p>Results are accurate and rounded to 2 decimals for readability.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Can this be used for business and eCommerce pricing?</h3>
+      <p>Yes, it is ideal for product pricing, promotions and online sales.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('discBtn').addEventListener('click', () => {
+
+  const o = parseFloat(document.getElementById('orig').value);
+  const d = parseFloat(document.getElementById('disc').value);
+  const out = document.getElementById('discResult');
+
+  if (isNaN(o) || isNaN(d)) {
+    out.textContent = 'Please enter valid numbers.';
+    return;
+  }
+
+  const discountAmount = o * (d / 100);
+  const finalPrice = o - discountAmount;
+
+  out.textContent = 
+    `Discount: ${discountAmount.toFixed(2)}, Final Price: ${finalPrice.toFixed(2)}`;
+});
+</script>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I calculate discount amount?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Discount = Original Price × (Discount % ÷ 100). The tool calculates this instantly."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I calculate multiple discounts?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Multiple discounts should be applied sequentially. Example: first 20% off, then 10% off."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the tool support tax calculations?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "At the moment it does not include tax functionality, but a tax calculator is planned."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

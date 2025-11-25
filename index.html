@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pro Unit Converter — Free Online Converters & Calculators</title>
+
+<!-- SEO Meta -->
+<meta name="description" content="Pro Unit Converter — Fast, accurate and mobile-friendly online converters for length, temperature, data, area, speed, GST, loan, discount and scientific calculations. Modern UI, instant results and 100% free tools.">
+<meta name="keywords" content="unit converter, online calculator, length converter, temperature converter, loan calculator, gst calculator, discount calculator, scientific calculator, area converter, speed converter, volume converter, data converter">
+<meta name="author" content="Pro Unit Converter">
+<meta name="robots" content="index, follow">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Pro Unit Converter — Free Online Converters">
+<meta property="og:description" content="Convert Length, Temperature, Data, Area, Speed, GST, Loans & more. Accurate, instant and free.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="logo.png" alt="Pro Unit Converter Logo" width="40" height="40">
+    <span>Pro Unit Converter</span>
+  </a>
+
+  <!-- TOP MENU -->
+  <nav class="top-nav">
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+
+  <button class="btn" id="darkModeToggle">🌙</button>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › <span>All Tools</span>
+</nav>
+
+<main class="container">
+
+<!-- SEARCH BAR -->
+<section class="search-section card">
+  <h2 class="section-title">Search Tools</h2>
+  <input type="text" id="searchBar" placeholder="Search any converter..." onkeyup="searchTools()">
+</section>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1 class="title">Welcome to Pro Unit Converter</h1>
+  <p class="subtitle">
+    Your all-in-one destination for fast, smart and accurate online conversions.
+    Convert length, temperature, area, time, speed, volume, power, data, energy, money and more.
+  </p>
+
+  <p class="hero-extra">
+    Built for students, engineers, developers, researchers, business owners,
+    cooks, electricians, physicists and everyday users.
+    100% free, fast, modern and mobile-friendly.
+  </p>
+</section>
+
+<!-- ALL TOOLS SECTION -->
+<section class="card">
+  <h2 class="section-title">All Tools & Converters</h2>
+
+  <div class="tools-grid" id="toolList">
+
+    <!-- LENGTH -->
+    <div class="tool blue">
+      <a href="length.html">
+        <h3>Length Converter</h3>
+        <p>Convert meters, cm, km, feet, inches, miles & more. Accurate engineering conversions.</p>
+      </a>
+    </div>
+
+    <!-- TEMPERATURE -->
+    <div class="tool red">
+      <a href="temperature.html">
+        <h3>Temperature Converter</h3>
+        <p>Celsius, Fahrenheit & Kelvin — instant results for science, weather & cooking.</p>
+      </a>
+    </div>
+
+    <!-- SPEED -->
+    <div class="tool purple">
+      <a href="speed.html">
+        <h3>Speed Converter</h3>
+        <p>Convert km/h, mph, m/s, knots — used in physics, automotive & navigation.</p>
+      </a>
+    </div>
+
+    <!-- TIME -->
+    <div class="tool teal">
+      <a href="time.html">
+        <h3>Time Converter</h3>
+        <p>Convert seconds, minutes, hours, days, weeks — perfect for scheduling.</p>
+      </a>
+    </div>
+
+    <!-- VOLUME -->
+    <div class="tool orange">
+      <a href="volume.html">
+        <h3>Volume Converter</h3>
+        <p>Liters, gallons, cups, ml — ideal for chemistry, cooking & industry.</p>
+      </a>
+    </div>
+
+    <!-- AREA -->
+    <div class="tool green">
+      <a href="area.html">
+        <h3>Area Converter</h3>
+        <p>Square meters, acres, hectares — real estate, farming & surveying ready.</p>
+      </a>
+    </div>
+
+    <!-- DATA -->
+    <div class="tool indigo">
+      <a href="data.html">
+        <h3>Data Converter</h3>
+        <p>KB, MB, GB, TB — essential for IT, coding & storage planning.</p>
+      </a>
+    </div>
+
+    <!-- ENERGY -->
+    <div class="tool yellow">
+      <a href="energy.html">
+        <h3>Energy Converter</h3>
+        <p>Joules, calories, kWh, BTU — useful for physics & electrical systems.</p>
+      </a>
+    </div>
+
+    <!-- POWER -->
+    <div class="tool pink">
+      <a href="power.html">
+        <h3>Power Converter</h3>
+        <p>Watts, kW, horsepower — mechanical & electrical engineering ready.</p>
+      </a>
+    </div>
+
+    <!-- SCIENTIFIC -->
+    <div class="tool darkblue">
+      <a href="scientific.html">
+        <h3>Scientific Calculator</h3>
+        <p>Trigonometry, logarithms, algebra & scientific functions.</p>
+      </a>
+    </div>
+
+    <!-- AGE -->
+    <div class="tool cyan">
+      <a href="age.html">
+        <h3>Age Calculator</h3>
+        <p>Find exact age in years, months, days & seconds.</p>
+      </a>
+    </div>
+
+    <!-- GST -->
+    <div class="tool orange2">
+      <a href="gst.html">
+        <h3>GST Calculator</h3>
+        <p>GST-inclusive & exclusive amounts — business billing ready.</p>
+      </a>
+    </div>
+
+    <!-- LOAN -->
+    <div class="tool green2">
+      <a href="loan.html">
+        <h3>Loan Calculator</h3>
+        <p>EMI calculator for car, home, education & business loans.</p>
+      </a>
+    </div>
+
+    <!-- DISCOUNT -->
+    <div class="tool red2">
+      <a href="discount.html">
+        <h3>Discount Calculator</h3>
+        <p>Calculate percentage discounts and final price instantly.</p>
+      </a>
+    </div>
+
+    <!-- PERCENTAGE -->
+    <div class="tool lime">
+      <a href="percentage.html">
+        <h3>Percentage Calculator</h3>
+        <p>% increase, % decrease, ratios & comparisons.</p>
+      </a>
+    </div>
+
+    <!-- AREA & VOLUME -->
+    <div class="tool brown">
+      <a href="area-volume.html">
+        <h3>Area & Volume Tool</h3>
+        <p>Geometry calculator for cylinders, spheres, cubes & more.</p>
+      </a>
+    </div>
+
+    <!-- COOKING CONVERTER -->
+    <div class="tool gold">
+      <a href="cooking.html">
+        <h3>Cooking Converter</h3>
+        <p>Convert cups, grams, teaspoons, ounces for recipes.</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter. All Rights Reserved.</p>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+/* SEARCH FUNCTION */
+function searchTools() {
+  let input = document.getElementById("searchBar").value.toLowerCase();
+  let tools = document.querySelectorAll(".tool");
+
+  tools.forEach(tool => {
+    let text = tool.innerText.toLowerCase();
+    tool.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+</script>
+<div id="cookieBanner" class="cookie-banner">
+  <p>
+    🍪 This website uses cookies to ensure you get the best experience.
+    <a href="privacy.html">Learn more</a>
+  </p>
+  <button id="acceptCookies">Accept</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Length Converter — Convert Meters, Feet, Inches, KM, Yards & Miles | Pro Unit Converter</title>
+
+<meta name="description" content="Free Length Converter — Convert meters, centimeters, millimeters, kilometers, feet, inches, yards & miles instantly. Perfect for engineering, construction, science, math & daily measurement tasks.">
+<meta name="keywords" content="length converter, meter to feet, feet to inches, cm to inches, mm to cm, km to miles, yard to meter converter, imperial to metric converter, unit conversion tool">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Length Converter — Instant Unit Conversion Tool">
+<meta property="og:description" content="Convert meters, feet, inches, centimeters, millimeters, kilometers, miles & more instantly. Accurate & fast.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://yourwebsite.com/length.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="logo.png" width="40" height="40" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+
+  <button class="btn" id="darkModeToggle">🌙</button>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Length Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="title">Length Converter</h1>
+    <p class="subtitle">
+      Instantly convert meters, centimeters, kilometers, feet, inches, yards and miles with 100% accuracy.
+    </p>
+
+    <p class="hero-extra">
+      Ideal for engineering, architecture, construction, science, DIY projects, education, mapping and more.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2 class="section-title">Length Conversion Tool</h2>
+
+    <div class="converter-box">
+
+      <label for="inputValue">Enter Value:</label>
+      <input type="number" id="inputValue" placeholder="Enter number">
+
+      <label for="fromUnit">From:</label>
+      <select id="fromUnit">
+        <option value="m">Meter (m)</option>
+        <option value="cm">Centimeter (cm)</option>
+        <option value="mm">Millimeter (mm)</option>
+        <option value="km">Kilometer (km)</option>
+        <option value="ft">Feet (ft)</option>
+        <option value="in">Inch (in)</option>
+        <option value="yd">Yard (yd)</option>
+        <option value="mi">Mile (mi)</option>
+      </select>
+
+      <label for="toUnit">To:</label>
+      <select id="toUnit">
+        <option value="m">Meter (m)</option>
+        <option value="cm">Centimeter (cm)</option>
+        <option value="mm">Millimeter (mm)</option>
+        <option value="km">Kilometer (km)</option>
+        <option value="ft">Feet (ft)</option>
+        <option value="in">Inch (in)</option>
+        <option value="yd">Yard (yd)</option>
+        <option value="mi">Mile (mi)</option>
+      </select>
+
+      <button onclick="convertLength()" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <h3>Result:</h3>
+        <p id="result">Enter a value to convert.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO INFO -->
+  <section class="card">
+    <h2 class="section-title">About This Length Converter</h2>
+    <p>
+      This advanced length converter lets you switch between metric and imperial units instantly.  
+      Whether you're measuring material for construction, calculating distances, converting  
+      classroom measurements, or checking dimensions for DIY projects — this tool gives fast and  
+      accurate results every time.
+    </p>
+    <p>
+      Supported conversions include meters, centimeters, millimeters, kilometers, feet, inches,  
+      yards, and miles. Built for professionals, students, travelers, designers and everyday users.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2 class="section-title">Length Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How do I convert meters to feet?</h3>
+      <p>1 meter = 3.28084 feet. Enter meters and choose feet to convert instantly.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. How many inches are in a foot?</h3>
+      <p>There are exactly 12 inches in one foot.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. How many centimeters are in an inch?</h3>
+      <p>1 inch = 2.54 centimeters.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. How accurate is this length converter?</h3>
+      <p>This tool uses international standard conversion factors ensuring real-world precision.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Does this converter work offline?</h3>
+      <p>Yes. All calculations run locally in your browser without needing the internet.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// LENGTH CONVERSION SCRIPT — with 2 decimals
+function convertLength() {
+  const value = parseFloat(document.getElementById("inputValue").value);
+  const from = document.getElementById("fromUnit").value;
+  const to = document.getElementById("toUnit").value;
+
+  if (isNaN(value)) {
+    document.getElementById("result").innerText = "Please enter a valid number.";
+    return;
+  }
+
+  const factors = {
+    m: 1,
+    cm: 0.01,
+    mm: 0.001,
+    km: 1000,
+    ft: 0.3048,
+    in: 0.0254,
+    yd: 0.9144,
+    mi: 1609.34,
+  };
+
+  const meters = value * factors[from];
+  const finalValue = meters / factors[to];
+
+  document.getElementById("result").innerText =
+    `${value} ${from} = ${finalValue.toFixed(2)} ${to}`;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* ============================================================
+   PRO UNIT CONVERTER — PREMIUM UI THEME
+   Modern, clean, colorful, accessible — ready for production
+   Includes: responsive layout, dark mode, animations, tool cards,
+   converter form styles, buttons, footer and utility classes.
+============================================================ */
+
+:root{
+  /* Palette */
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: linear-gradient(135deg,#ff6f61,#ff9966);
+  --accent-solid: #ff6f61;
+
+  /* Cards & UI */
+  --card: #ffffff;
+  --radius: 14px;
+  --glass: rgba(255,255,255,0.6);
+  --shadow-sm: 0 4px 14px rgba(2,6,23,0.06);
+  --shadow-lg: 0 12px 40px rgba(2,6,23,0.12);
+
+  /* Sizes */
+  --container-w: 1180px;
+  --gap: 18px;
+
+  /* Accent colors */
+  --blue: #42a5f5; --red: #ef5350; --purple: #ab47bc; --teal: #26a69a;
+  --orange: #fb8c00; --green: #66bb6a; --indigo: #5c6bc0; --cyan: #00bcd4;
+  --yellow: #fdd835; --pink: #ec407a; --darkblue: #1e3a8a;
+  --grey: #90a4ae; --muted-2:#98a1b3;
+
+  /* Utility */
+  --transition: 200ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Dark mode overrides */
+body.dark{
+  --bg:#071022;
+  --surface:#0f1724;
+  --card:#0b1220;
+  --text:#e6eef8;
+  --muted:#9aa8c0;
+  --glass: rgba(255,255,255,0.03);
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.6);
+  --shadow-lg: 0 18px 60px rgba(0,0,0,0.7);
+}
+
+/* ------------------ Base ------------------ */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;padding:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background var(--transition), color var(--transition);
+}
+
+.container{
+  width:calc(100% - 40px);
+  max-width:var(--container-w);
+  margin:0 auto;
+  padding:28px 20px;
+}
+
+a{color:inherit}
+
+h1{font-size:28px;line-height:1.08}
+h2{font-size:20px}
+h3{font-size:16px}
+p{color:var(--muted);margin:0}
+
+/* ------------------ Header ------------------ */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 20px;border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0.35));
+  backdrop-filter:blur(6px);box-shadow:var(--shadow-sm);position:sticky;top:12px;z-index:40;margin:16px 20px 0;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.brand span{font-weight:700;color:var(--accent-solid)}
+
+.site-header .controls{display:flex;gap:10px;align-items:center}
+.btn{appearance:none;border:0;background:transparent;padding:8px 12px;border-radius:10px;cursor:pointer;transition:all var(--transition);font-weight:600}
+.btn.primary{background:var(--accent);color:#fff;padding:10px 14px;box-shadow:var(--shadow-sm)}
+.btn.ghost{border:1px solid rgba(0,0,0,0.06);background:transparent}
+.btn.toggle{width:44px;height:38px;display:inline-flex;align-items:center;justify-content:center}
+
+/* ------------------ Breadcrumb ------------------ */
+.breadcrumb{font-size:13px;color:var(--muted);margin:18px 20px}
+.breadcrumb a{color:var(--accent-solid);text-decoration:none}
+
+/* ------------------ Hero ------------------ */
+.hero{margin:18px 0 8px;text-align:center}
+.hero .title{font-size:34px;margin-bottom:8px}
+.hero .subtitle{max-width:880px;margin:0 auto;color:var(--muted)}
+
+/* ------------------ Cards & Grid ------------------ */
+.card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);margin-bottom:22px}
+.section-title{font-size:18px;margin-bottom:12px}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}
+
+/* Tool square */
+.tool{position:relative;overflow:hidden;border-radius:14px;padding:18px;background:linear-gradient(180deg,var(--card),rgba(0,0,0,0.02));display:flex;flex-direction:column;justify-content:space-between;height:220px;transition:transform var(--transition), box-shadow var(--transition)}
+.tool:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.tool h3{font-size:18px;margin-bottom:6px}
+.tool p{font-size:14px;color:var(--muted)}
+.tool a{color:inherit;text-decoration:none}
+.tool::after{content:"";position:absolute;left:0;top:0;height:100%;width:8px;background:var(--accent-solid);transition:background var(--transition)}
+
+/* color strips */
+.blue::after{background:var(--blue)}.red::after{background:var(--red)}.purple::after{background:var(--purple)}.teal::after{background:var(--teal)}.orange::after{background:var(--orange)}.green::after{background:var(--green)}.indigo::after{background:var(--indigo)}.cyan::after{background:var(--cyan)}.pink::after{background:var(--pink)}.gold::after{background:var(--yellow)}
+
+/* tool footer */
+.tool .meta{display:flex;align-items:center;gap:10px}
+.tool .meta .icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(0,0,0,0.03),rgba(255,255,255,0.02));display:inline-flex;align-items:center;justify-content:center}
+
+/* ------------------ Converter form styles ------------------ */
+.converter-box, .converter{display:flex;flex-direction:column;gap:12px}
+label{font-weight:600;color:var(--text);font-size:14px}
+input[type=number], input[type=text], select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:15px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));transition:box-shadow var(--transition)}
+input:focus, select:focus{outline:none;box-shadow:0 6px 18px rgba(99,102,241,0.08)}
+
+.convert-btn{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:#fff;border:none;font-weight:700;cursor:pointer}
+.convert-btn:hover{opacity:0.98;transform:translateY(-1px)}
+
+.result-box{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0.02));border:1px solid rgba(0,0,0,0.04);font-weight:600}
+
+/* small helpers */
+.kv{display:flex;justify-content:space-between;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+
+/* ------------------ FAQ ------------------ */
+.faq-section .faq{margin-bottom:12px}
+.faq h3{font-size:15px;margin-bottom:6px}
+.faq p{color:var(--muted)}
+
+/* ------------------ Footer ------------------ */
+.site-footer{margin-top:36px;padding:22px;border-radius:12px;background:linear-gradient(180deg,var(--card), rgba(0,0,0,0.02));box-shadow:var(--shadow-sm)}
+.footer-flex{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.site-footer p{color:var(--muted)}
+.site-footer a{text-decoration:none;color:var(--accent-solid);font-weight:600}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width:900px){
+  .container{padding:20px}
+  .hero{text-align:left}
+  .site-header{margin:12px}
+}
+@media (max-width:600px){
+  .tools-grid{grid-template-columns:repeat(1,1fr)}
+  .brand span{display:none}
+  .hero .title{font-size:22px}
+  .container{padding:14px}
+  .site-header{padding:10px}
+}
+
+/* ------------------ Accessibility & Print ------------------ */
+@media print{body{background:#fff;color:#000} .site-header, .site-footer{display:none}}
+
+/* ------------------ Utility classes ------------------ */
+.text-center{text-align:center}
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mb-16{margin-bottom:16px}
+.hidden{display:none}
+/* ================================
+   COOKIE BANNER (Option B)
+================================ */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card);
+  padding: 18px 20px;
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  border-top: 3px solid var(--accent);
+  animation: fadeUp 0.4s ease;
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.cookie-banner a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#acceptCookies {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#acceptCookies:hover {
+  background: #e65652;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HIDDEN STATE */
+.cookie-banner.hide {
+  display: none;
+}
+
+
+/* End of premium theme */

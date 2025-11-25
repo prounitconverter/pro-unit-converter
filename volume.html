@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Volume Converter — Liters, Milliliters, Gallons, Cups & Cubic Units | Pro Unit Converter</title>
+
+<meta name="description" content="Free Volume Converter — Convert liters, milliliters, gallons, quarts, pints, cups and cubic meters with high accuracy. Perfect for cooking, science, chemistry, construction and daily use.">
+<meta name="keywords" content="volume converter, liters to gallons, ml to liters, gallon to liter, convert volume units, cubic meter converter, cooking volume converter">
+
+<link rel="canonical" href="https://yourwebsite.com/volume.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Volume Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Volume Converter</h1>
+    <p class="lead">
+      Convert liters, milliliters, gallons, quarts, pints, cups and cubic meters instantly.
+      Ideal for cooking, chemistry, science labs, construction and liquid measurements.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Volume Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="volValue">Enter Value:</label>
+      <input id="volValue" type="number" placeholder="Enter value">
+
+      <label for="fromVol">From:</label>
+      <select id="fromVol">
+        <option value="l">Liter (L)</option>
+        <option value="ml">Milliliter (mL)</option>
+        <option value="m3">Cubic meter (m³)</option>
+        <option value="gal">Gallon (US)</option>
+        <option value="qt">Quart (US)</option>
+        <option value="pt">Pint (US)</option>
+        <option value="cup">Cup (US)</option>
+      </select>
+
+      <label for="toVol">To:</label>
+      <select id="toVol">
+        <option value="l">Liter (L)</option>
+        <option value="ml">Milliliter (mL)</option>
+        <option value="m3">Cubic meter (m³)</option>
+        <option value="gal">Gallon (US)</option>
+        <option value="qt">Quart (US)</option>
+        <option value="pt">Pint (US)</option>
+        <option value="cup">Cup (US)</option>
+      </select>
+
+      <button id="volConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <h3>Result:</h3>
+        <div id="volResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="card">
+    <h2>About This Volume Converter</h2>
+
+    <p>
+      This free online Volume Converter lets you convert between common units including 
+      liters, milliliters, gallons, quarts, pints, cups and cubic meters. It is frequently used for:
+    </p>
+
+    <ul>
+      <li>Cooking measurements</li>
+      <li>Laboratory experiments</li>
+      <li>Medical dosages</li>
+      <li>Construction and cement mixing</li>
+      <li>Liquid storage, water tanks, fuel quantities</li>
+    </ul>
+
+    <p>
+      All conversions use accurate international standards and compute instantly inside your browser.
+    </p>
+
+    <h3>Key Conversion Values:</h3>
+    <ul>
+      <li>1 liter = 1000 milliliters</li>
+      <li>1 cubic meter = 1000 liters</li>
+      <li>1 US gallon = 3.78541 liters</li>
+      <li>1 US quart = 0.946353 liters</li>
+      <li>1 US pint = 0.473176 liters</li>
+      <li>1 US cup = 0.24 liters</li>
+    </ul>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="card faq-section">
+    <h2>Volume Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How many milliliters are in 1 liter?</h3>
+      <p>There are 1000 mL in 1 liter.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Is a US gallon the same as a UK gallon?</h3>
+      <p>No. This tool uses US gallons only. UK gallons are larger.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Can this be used for cooking conversions?</h3>
+      <p>Yes, it includes cups, pints and quarts — ideal for baking and recipes.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this converter work offline?</h3>
+      <p>Yes — everything runs entirely in your browser for complete privacy.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Are results rounded?</h3>
+      <p>Yes, values are rounded to 2 decimal places for clarity.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter. All Rights Reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('volConvertBtn').addEventListener('click', () => {
+  const v = parseFloat(document.getElementById('volValue').value);
+  const from = document.getElementById('fromVol').value;
+  const to = document.getElementById('toVol').value;
+  const out = document.getElementById('volResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  const table = {
+    l: 1,
+    ml: 0.001,
+    m3: 1000,
+    gal: 3.785411784,
+    qt: 0.946352946,
+    pt: 0.473176473,
+    cup: 0.24
+  };
+
+  const liters = v * table[from];
+  const res = liters / table[to];
+
+  out.textContent = `${v} ${from} = ${res.toFixed(2)} ${to}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Cooking Converter — Cups, Tablespoons, Teaspoons, mL & Grams | Pro Unit Converter</title>
+
+<meta name="description" content="Cooking Converter: Convert cups, tablespoons, teaspoons, milliliters and grams instantly. Ideal for recipes, baking, meal prep and cooking measurements. Accurate and easy.">
+<meta name="keywords" content="cooking converter, cups to grams, grams to ml, tbsp to tsp, tbsp to ml, cooking measurement converter, recipe measurement tool, baking converter, kitchen unit converter">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cooking Converter — Cups, Tablespoons, Teaspoons, mL & Grams">
+<meta property="og:description" content="Instant cooking unit converter for cups, teaspoons, tablespoons, ml and grams. Perfect for baking and recipe conversions.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/cooking.html">
+
+<link rel="canonical" href="https://yourwebsite.com/cooking.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Cooking Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Cooking Converter</h1>
+    <p class="lead">
+      Easily convert cups, tablespoons, teaspoons, milliliters and grams.  
+      Ideal for recipe adjustments, baking accuracy, meal preparation and kitchen measurements.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Cooking Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="cookValue">Enter Value</label>
+      <input id="cookValue" type="number" placeholder="Enter value">
+
+      <label for="cookFrom">From Unit</label>
+      <select id="cookFrom">
+        <option value="cup">Cup</option>
+        <option value="tbsp">Tablespoon (Tbsp)</option>
+        <option value="tsp">Teaspoon (Tsp)</option>
+        <option value="ml">Milliliter (mL)</option>
+        <option value="g_water">Grams (Water)</option>
+      </select>
+
+      <label for="cookTo">To Unit</label>
+      <select id="cookTo">
+        <option value="cup">Cup</option>
+        <option value="tbsp">Tablespoon (Tbsp)</option>
+        <option value="tsp">Teaspoon (Tsp)</option>
+        <option value="ml">Milliliter (mL)</option>
+        <option value="g_water">Grams (Water)</option>
+      </select>
+
+      <button id="cookBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <div id="cookRes">—</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO TEXT -->
+  <section class="card">
+    <h2>About This Cooking Converter</h2>
+    <p>
+      This Cooking Converter instantly transforms common kitchen measurement units such as cups, tablespoons,
+      teaspoons, milliliters and grams. It is perfect for baking, cooking, meal prep, food science, and recipe scaling.
+    </p>
+    <p>
+      All gram conversions assume <strong>water density (1 mL = 1 g)</strong>.  
+      For ingredients like flour, sugar or butter, density varies — so results may differ.  
+      The tool works perfectly for:
+    </p>
+    <ul>
+      <li>Making recipe adjustments</li>
+      <li>Scaling quantities up or down</li>
+      <li>International recipe conversions</li>
+      <li>Accurate cooking and baking measurements</li>
+      <li>Converting metric ↔ US cooking units</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Cooking Converter</h2>
+
+    <div class="faq">
+      <h3>1. Does this tool assume ingredient density?</h3>
+      <p>Yes. Conversions to grams assume water density. Other ingredients have different densities.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. How many milliliters are in one cup?</h3>
+      <p>1 US cup = <strong>240 mL</strong>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Is 1 tablespoon equal to 3 teaspoons?</h3>
+      <p>Yes. <strong>1 Tbsp = 3 Tsp</strong>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this converter work offline?</h3>
+      <p>Yes, all calculations run directly in your browser.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Why do grams vary for different foods?</h3>
+      <p>Because density differs. Flour, butter, milk, oil and sugar all have unique weights per cup.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('cookBtn').addEventListener('click', () => {
+
+  const v = parseFloat(document.getElementById('cookValue').value);
+  const from = document.getElementById('cookFrom').value;
+  const to = document.getElementById('cookTo').value;
+  const out = document.getElementById('cookRes');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  // Conversion base (mL equivalent)
+  const map = {
+    cup: 240,      // 1 cup = 240 mL
+    tbsp: 15,      // 1 tbsp = 15 mL
+    tsp: 5,        // 1 tsp = 5 mL
+    ml: 1,         // milliliters
+    g_water: 1     // assuming 1 mL = 1 g
+  };
+
+  const base = v * (map[from] || 1);  // convert to mL
+  const result = base / (map[to] || 1);
+
+  out.textContent = `${v} ${from} = ${result.toFixed(2)} ${to}`;
+});
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Does this tool assume ingredient density?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Conversions to grams assume water density. Other ingredients have different densities."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many milliliters are in one cup?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "1 US cup equals 240 milliliters."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is 1 tablespoon equal to 3 teaspoons?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. 1 tablespoon equals 3 teaspoons."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why do grams vary for different foods?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Different ingredients have different densities. Flour, sugar, milk, butter and oil all weigh differently."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

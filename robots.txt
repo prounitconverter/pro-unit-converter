@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cgi-bin/
+
+# Sitemap Location
+Sitemap: https://yourdomain.com/sitemap.xml

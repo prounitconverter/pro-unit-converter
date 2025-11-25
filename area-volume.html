@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Area & Volume Calculator — Rectangle, Circle, Cylinder & Geometry Tools | Pro Unit Converter</title>
+
+<meta name="description" content="Free Area & Volume Calculator: Calculate rectangle area, circle area, triangle area and cylinder volume instantly. Includes formulas, explanations and step-by-step calculations.">
+<meta name="keywords" content="area calculator, volume calculator, rectangle area calculator, circle area calculator, cylinder volume calculator, geometry calculator, 2D area, 3D volume, maths tools">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Area & Volume Calculator — Rectangle, Circle & Cylinder">
+<meta property="og:description" content="Calculate area and volume for rectangles, circles, cylinders and more. Fast, accurate and mobile-friendly geometry tool.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://yourwebsite.com/logo.png">
+<meta property="og:url" content="https://yourwebsite.com/area-volume.html">
+
+<link rel="canonical" href="https://yourwebsite.com/area-volume.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Area & Volume Tools</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Area & Volume Calculator</h1>
+    <p class="lead">
+      Calculate area and volume for rectangles, circles and cylinders with accurate geometry formulas.
+      Ideal for students, architects, engineers, builders, teachers and daily measurements.
+    </p>
+  </section>
+
+  <!-- TOOL CARD -->
+  <section class="card">
+
+    <!-- Rectangle Area -->
+    <h2>Rectangle Area Calculator</h2>
+    <p class="info-text">Formula: <strong>Area = Width × Height</strong></p>
+
+    <div class="converter">
+      <label for="rectW">Width (m)</label>
+      <input id="rectW" type="number" placeholder="Enter width">
+
+      <label for="rectH">Height (m)</label>
+      <input id="rectH" type="number" placeholder="Enter height">
+
+      <button id="rectBtn" class="convert-btn">Calculate</button>
+      <div id="rectRes" class="result-box">—</div>
+    </div>
+
+    <hr>
+
+    <!-- Circle Area -->
+    <h2>Circle Area Calculator</h2>
+    <p class="info-text">Formula: <strong>Area = π × r²</strong></p>
+
+    <div class="converter">
+      <label for="circleR">Radius (m)</label>
+      <input id="circleR" type="number" placeholder="Enter radius">
+
+      <button id="circleBtn" class="convert-btn">Calculate</button>
+      <div id="circleRes" class="result-box">—</div>
+    </div>
+
+    <hr>
+
+    <!-- Cylinder Volume -->
+    <h2>Cylinder Volume Calculator</h2>
+    <p class="info-text">Formula: <strong>Volume = π × r² × height</strong></p>
+
+    <div class="converter">
+      <label for="cylR">Radius (m)</label>
+      <input id="cylR" type="number" placeholder="Enter radius">
+
+      <label for="cylH">Height (m)</label>
+      <input id="cylH" type="number" placeholder="Enter height">
+
+      <button id="cylBtn" class="convert-btn">Calculate</button>
+      <div id="cylRes" class="result-box">—</div>
+    </div>
+
+  </section>
+
+  <!-- SEO Content -->
+  <section class="card">
+    <h2>About This Area & Volume Calculator</h2>
+    <p>
+      This all-in-one geometry tool helps you calculate area and volume for essential shapes such as rectangles,
+      circles and cylinders. It uses standard mathematical formulas and provides instant, accurate and clear results.
+    </p>
+    <p>
+      These calculations are commonly used in construction, academics, architecture, landscaping, engineering,
+      interior design, carpentry, manufacturing and school mathematics.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Area & Volume Tools</h2>
+
+    <div class="faq">
+      <h3>1. What formula is used to calculate rectangle area?</h3>
+      <p>Rectangle Area = Width × Height. The result is shown in square meters (m²).</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. How is circle area calculated?</h3>
+      <p>Circle Area = π × radius². This calculator uses π = 3.14159.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. What is the cylinder volume formula?</h3>
+      <p>Volume = π × radius² × height. The output is in cubic meters (m³).</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Are the results rounded?</h3>
+      <p>Yes. All outputs are rounded to 2 decimal places for better readability.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Does this tool work offline?</h3>
+      <p>Yes, all calculations run in your browser with no internet required.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('rectBtn').addEventListener('click', ()=> {
+  const w = parseFloat(document.getElementById('rectW').value);
+  const h = parseFloat(document.getElementById('rectH').value);
+  const out = document.getElementById('rectRes');
+
+  if (isNaN(w) || isNaN(h)) {
+    out.textContent = 'Please enter valid numbers.';
+    return;
+  }
+
+  out.textContent = `Rectangle Area: ${(w * h).toFixed(2)} m²`;
+});
+
+document.getElementById('circleBtn').addEventListener('click', ()=> {
+  const r = parseFloat(document.getElementById('circleR').value);
+  const out = document.getElementById('circleRes');
+
+  if (isNaN(r)) {
+    out.textContent = 'Please enter a radius.';
+    return;
+  }
+
+  out.textContent = `Circle Area: ${(Math.PI * r * r).toFixed(2)} m²`;
+});
+
+document.getElementById('cylBtn').addEventListener('click', ()=> {
+  const r = parseFloat(document.getElementById('cylR').value);
+  const h = parseFloat(document.getElementById('cylH').value);
+  const out = document.getElementById('cylRes');
+
+  if (isNaN(r) || isNaN(h)) {
+    out.textContent = 'Please enter valid numbers.';
+    return;
+  }
+
+  out.textContent = `Cylinder Volume: ${(Math.PI * r * r * h).toFixed(2)} m³`;
+});
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What formula is used to calculate rectangle area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rectangle Area = Width × Height. Results are displayed in square meters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is circle area calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Circle Area = π × radius². The calculator uses π = 3.14159."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cylinder volume formula?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cylinder Volume = π × radius² × height. Output is in cubic meters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the results rounded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, results are rounded to 2 decimal places for readability."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

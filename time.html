@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Time Converter — Convert Seconds, Minutes, Hours, Days & Weeks | Pro Unit Converter</title>
+
+<meta name="description" content="Free Time Converter — Instantly convert seconds, minutes, hours, days and weeks with accurate formulas. Ideal for productivity, academics, timers and scheduling.">
+<meta name="keywords" content="time converter, seconds to minutes, minutes to hours, hours to days, time duration converter, online time calculator, convert seconds, convert hours, Pro Unit Converter">
+
+<link rel="canonical" href="https://yourwebsite.com/time.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Time Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Time Converter</h1>
+    <p class="lead">
+      Convert seconds, minutes, hours, days and weeks instantly. Perfect for productivity, academic calculations, stopwatch timing, scheduling, and time management.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Time Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="timeValue">Enter Value:</label>
+      <input id="timeValue" type="number" placeholder="Enter time value">
+
+      <label for="fromTime">From:</label>
+      <select id="fromTime">
+        <option value="s">Seconds (s)</option>
+        <option value="min">Minutes</option>
+        <option value="h">Hours</option>
+        <option value="d">Days</option>
+        <option value="w">Weeks</option>
+      </select>
+
+      <label for="toTime">To:</label>
+      <select id="toTime">
+        <option value="s">Seconds (s)</option>
+        <option value="min">Minutes</option>
+        <option value="h">Hours</option>
+        <option value="d">Days</option>
+        <option value="w">Weeks</option>
+      </select>
+
+      <button id="timeConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <h3>Result:</h3>
+        <div id="timeResult">—</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="card">
+    <h2>About This Time Converter</h2>
+
+    <p>
+      This free Time Converter helps you convert between different time units: seconds, minutes, hours, days and weeks. 
+      It is useful for:
+    </p>
+
+    <ul>
+      <li>Study and academic time calculations</li>
+      <li>Timers, countdowns and schedules</li>
+      <li>Work productivity and task management</li>
+      <li>Sports, training and event timing</li>
+      <li>Programming and automation tasks</li>
+    </ul>
+
+    <h3>Standard Conversion Values:</h3>
+    <ul>
+      <li>1 minute = 60 seconds</li>
+      <li>1 hour = 60 minutes = 3600 seconds</li>
+      <li>1 day = 24 hours = 1440 minutes</li>
+      <li>1 week = 7 days = 168 hours</li>
+    </ul>
+
+    <p>
+      All calculations happen instantly inside your browser for full privacy — no data stored, no server processing.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>Time Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How many seconds are in a day?</h3>
+      <p>A day has 86,400 seconds (24 × 3600).</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Can I convert large time values?</h3>
+      <p>Yes, the converter supports very large numbers without any issues.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Why are time units important?</h3>
+      <p>Time units help measure durations, schedules, productivity cycles and event planning clearly.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this converter work offline?</h3>
+      <p>Yes — all conversions run directly in your browser.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Is the tool accurate?</h3>
+      <p>Absolutely. All calculations follow standard international time measurement values.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('timeConvertBtn').addEventListener('click', () => {
+  const v = parseFloat(document.getElementById('timeValue').value);
+  const from = document.getElementById('fromTime').value;
+  const to = document.getElementById('toTime').value;
+  const out = document.getElementById('timeResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  const table = {
+    s: 1,
+    min: 60,
+    h: 3600,
+    d: 86400,
+    w: 604800
+  };
+
+  const seconds = v * table[from];
+  const res = seconds / table[to];
+
+  out.textContent = `${v} ${from} = ${res.toFixed(2)} ${to}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Power Converter — Convert Watts (W), Kilowatts (kW) & Horsepower (HP) | Pro Unit Converter</title>
+
+<meta name="description" content="Free Power Converter — Instantly convert between watts (W), kilowatts (kW) and horsepower (hp) with precise engineering formulas. Fast, accurate and modern online tool.">
+<meta name="keywords" content="power converter, watts to horsepower, kw to watts, hp to kw, power calculator, engineering power units">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Power Converter — Watts, kW & Horsepower">
+<meta property="og:description" content="Convert watts, kilowatts and horsepower instantly with precision engineering accuracy.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://yourwebsite.com/power.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Power Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- Hero -->
+  <section class="hero premium">
+    <h1>Power Converter</h1>
+    <p class="lead">Convert watts (W), kilowatts (kW) and horsepower (hp) accurately — ideal for engineering, automotive, electrical and industrial use.</p>
+  </section>
+
+  <!-- Tool -->
+  <section class="card">
+    <h2>Power Conversion Tool</h2>
+
+    <div class="converter">
+      <input id="powerValue" type="number" placeholder="Enter value">
+
+      <select id="fromPower">
+        <option value="W">Watt (W)</option>
+        <option value="kW">Kilowatt (kW)</option>
+        <option value="hp">Horsepower (hp)</option>
+      </select>
+
+      <select id="toPower">
+        <option value="W">Watt (W)</option>
+        <option value="kW">Kilowatt (kW)</option>
+        <option value="hp">Horsepower (hp)</option>
+      </select>
+
+      <button id="powerConvertBtn" class="convert-btn">Convert</button>
+
+      <div class="result-box">
+        <div id="powerResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Section -->
+  <section class="card">
+    <h2 class="section-title">About This Power Converter</h2>
+    <p>
+      This online power converter allows you to convert between watts (W), kilowatts (kW) and horsepower (hp)
+      using precise engineering-grade formulas. Whether you work with engines, electrical equipment,
+      industrial machinery or renewable energy systems, this tool provides fast and accurate conversions.
+    </p>
+    <p>
+      Horsepower values use the standard mechanical horsepower conversion (1 hp = 745.699872 watts) ensuring
+      high accuracy for automotive and industrial calculations.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>Power Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How many watts are in one horsepower?</h3>
+      <p>1 mechanical horsepower = 745.699872 watts.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. What is the difference between kW and W?</h3>
+      <p>1 kilowatt = 1000 watts. Kilowatts are used for larger power ratings like engines or appliances.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Are conversions accurate for engineering use?</h3>
+      <p>Yes — this tool uses internationally accepted engineering conversion constants.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this work offline?</h3>
+      <p>Yes! All calculations run directly in your browser with no server required.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// Power converter — accurate 2-decimal output
+document.getElementById('powerConvertBtn').addEventListener('click', ()=> {
+  const v = parseFloat(document.getElementById('powerValue').value);
+  const from = document.getElementById('fromPower').value;
+  const to = document.getElementById('toPower').value;
+  const out = document.getElementById('powerResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Enter a valid number.';
+    return;
+  }
+
+  const table = {
+    W: 1,
+    kW: 1000,
+    hp: 745.69987158227
+  };
+
+  const watts = v * table[from];
+  const res = watts / table[to];
+
+  out.textContent = `${v} ${from} = ${res.toFixed(2)} ${to}`;
+});
+</script>
+
+</body>
+</html>

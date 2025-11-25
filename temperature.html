@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Temperature Converter — Convert Celsius, Fahrenheit & Kelvin | Pro Unit Converter</title>
+
+<meta name="description" content="Free Temperature Converter — Instantly convert Celsius (°C), Fahrenheit (°F) and Kelvin (K). Accurate formulas for science, cooking, weather and education.">
+<meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, online temperature calculator, convert c to f, convert f to c, weather converter, science tool">
+
+<link rel="canonical" href="https://yourwebsite.com/temperature.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Temperature Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO SECTION -->
+  <section class="hero premium">
+    <h1>Temperature Converter</h1>
+    <p class="lead">
+      Convert Celsius (°C), Fahrenheit (°F) and Kelvin (K) instantly — perfect for weather comparisons, science experiments, cooking, engineering, and classroom learning.
+    </p>
+  </section>
+
+  <!-- TEMPERATURE TOOL -->
+  <section class="card">
+    <h2>Temperature Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="tempValue">Enter Temperature:</label>
+      <input id="tempValue" type="number" placeholder="Enter temperature">
+
+      <label for="fromTemp">From:</label>
+      <select id="fromTemp">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+
+      <label for="toTemp">To:</label>
+      <select id="toTemp">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+
+      <button id="tempConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <h3>Result:</h3>
+        <div id="tempResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="card">
+    <h2>About This Temperature Converter</h2>
+    <p>
+      This online temperature converter uses internationally accepted formulas for converting between Celsius, Fahrenheit, and Kelvin. 
+      It is designed for:
+    </p>
+
+    <ul>
+      <li>Cooking and food temperature adjustments</li>
+      <li>Weather and climate temperature conversions</li>
+      <li>Physics and chemistry experiments</li>
+      <li>Education and classroom activities</li>
+      <li>Engineering and industrial calculations</li>
+    </ul>
+
+    <p>
+      All calculations are instant and run directly in your browser without sending data anywhere — privacy friendly and accurate.
+    </p>
+
+    <h3>Standard Conversion Formulas:</h3>
+    <ul>
+      <li>°C → °F : <strong>(C × 9/5) + 32</strong></li>
+      <li>°F → °C : <strong>(F − 32) × 5/9</strong></li>
+      <li>°C → K : <strong>C + 273.15</strong></li>
+      <li>K → °C : <strong>K − 273.15</strong></li>
+      <li>°F → K : <strong>((F − 32) × 5/9) + 273.15</strong></li>
+      <li>K → °F : <strong>((K − 273.15) × 9/5) + 32</strong></li>
+    </ul>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="card faq-section">
+    <h2>Temperature Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. Why does Celsius start at 0?</h3>
+      <p>Celsius is based on the freezing (0°C) and boiling (100°C) points of water at sea level.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. What is Kelvin used for?</h3>
+      <p>Kelvin is used mainly in scientific calculations, physics, astronomy, and thermodynamics.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Is this tool accurate?</h3>
+      <p>
+        Yes — all formulas follow standard international conversion rules and are precise to 2 decimals.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this converter work offline?</h3>
+      <p>Yes — the calculations run locally in your browser without internet.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Can I convert negative temperatures?</h3>
+      <p>Absolutely. Celsius, Fahrenheit, and Kelvin (above absolute zero) all support negative values.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('tempConvertBtn').addEventListener('click', () => {
+  const v = parseFloat(document.getElementById('tempValue').value);
+  const from = document.getElementById('fromTemp').value;
+  const to = document.getElementById('toTemp').value;
+  const out = document.getElementById('tempResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid temperature.';
+    return;
+  }
+
+  let r = v;
+
+  if (from === to) r = v;
+  else if (from === 'C' && to === 'F') r = (v * 9/5) + 32;
+  else if (from === 'C' && to === 'K') r = v + 273.15;
+  else if (from === 'F' && to === 'C') r = (v - 32) * 5/9;
+  else if (from === 'F' && to === 'K') r = ((v - 32) * 5/9) + 273.15;
+  else if (from === 'K' && to === 'C') r = v - 273.15;
+  else if (from === 'K' && to === 'F') r = ((v - 273.15) * 9/5) + 32;
+
+  out.textContent = `${v} ${from} = ${r.toFixed(2)} ${to}`;
+});
+</script>
+
+</body>
+</html>

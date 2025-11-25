@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Data Converter — Bytes, KB, MB, GB, TB (Binary & Decimal) | Pro Unit Converter</title>
+
+<meta name="description" content="Free Data Converter — Convert bytes, KB, MB, GB and TB using binary (1024) or decimal (1000) systems. Ideal for IT, storage, computing and file size calculations.">
+<meta name="keywords" content="data converter, bytes to kb, kb to mb, mb to gb, gb to tb, file size converter, storage converter, binary converter, decimal converter, 1024 base, 1000 base">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Data Converter — Bytes, KB, MB, GB, TB">
+<meta property="og:description" content="Convert data storage units instantly using binary (1024) or decimal (1000) systems. Fast and accurate.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/data.html">
+
+<link rel="canonical" href="https://yourwebsite.com/data.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Data Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Data Converter</h1>
+    <p class="lead">
+      Convert between bytes, kilobytes, megabytes, gigabytes and terabytes.  
+      Supports both <strong>binary (1024)</strong> and <strong>decimal (1000)</strong> storage systems.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Data Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="dataValue">Enter Value</label>
+      <input id="dataValue" type="number" placeholder="Enter number">
+
+      <label for="fromData">From Unit</label>
+      <select id="fromData">
+        <option value="B">Byte (B)</option>
+        <option value="KB">Kilobyte (KB)</option>
+        <option value="MB">Megabyte (MB)</option>
+        <option value="GB">Gigabyte (GB)</option>
+        <option value="TB">Terabyte (TB)</option>
+      </select>
+
+      <label for="toData">To Unit</label>
+      <select id="toData">
+        <option value="B">Byte (B)</option>
+        <option value="KB">Kilobyte (KB)</option>
+        <option value="MB">Megabyte (MB)</option>
+        <option value="GB">Gigabyte (GB)</option>
+        <option value="TB">Terabyte (TB)</option>
+      </select>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="binaryBase"> Use binary system (1024)
+      </label>
+
+      <button id="dataConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <div id="dataResult">—</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section class="card">
+    <h2>About This Data Converter</h2>
+    <p>
+      This Data Converter helps you instantly convert storage units such as bytes, KB, MB, GB and TB.  
+      You can choose between:
+    </p>
+    <ul>
+      <li><strong>Decimal (Base 1000):</strong> Used by hard drive manufacturers</li>
+      <li><strong>Binary (Base 1024):</strong> Used by operating systems such as Windows, Linux and macOS</li>
+    </ul>
+    <p>
+      This makes the tool useful for IT professionals, developers, gamers, system builders, cloud computing users, 
+      data analysts and everyday users comparing storage sizes.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Data Converter</h2>
+
+    <div class="faq">
+      <h3>1. What is the difference between GB and GiB?</h3>
+      <p>GB = decimal (1000). GiB = binary (1024). This tool allows conversion using 1024 when enabled.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Why does my hard drive show less space?</h3>
+      <p>
+        Manufacturers use decimal (1000), but operating systems use binary (1024), causing smaller displayed space.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>3. When should I use the binary base option?</h3>
+      <p>Use binary when comparing RAM, OS file sizes and programming values.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Are conversion results accurate?</h3>
+      <p>Yes. All values use exact base multipliers and results are rounded to 2 decimals.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Does this tool work offline?</h3>
+      <p>Yes. All calculations run directly in your browser without internet.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('dataConvertBtn').addEventListener('click', () => {
+
+  const v = parseFloat(document.getElementById('dataValue').value);
+  const from = document.getElementById('fromData').value;
+  const to = document.getElementById('toData').value;
+  const binary = document.getElementById('binaryBase').checked;
+  const out = document.getElementById('dataResult');
+
+  if (isNaN(v)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  const base = binary ? 1024 : 1000;
+
+  const map = {
+    B: 1,
+    KB: base,
+    MB: Math.pow(base, 2),
+    GB: Math.pow(base, 3),
+    TB: Math.pow(base, 4)
+  };
+
+  const bytes = v * map[from];   // Convert to bytes
+  const result = bytes / map[to]; // Convert to target
+
+  out.textContent = `${v} ${from} = ${result.toFixed(2)} ${to} (${binary ? 'base 1024' : 'base 1000'})`;
+});
+</script>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is the difference between GB and GiB?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GB uses decimal base 1000, while GiB uses binary base 1024. This tool supports binary conversion."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does my hard drive show less space?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Manufacturers use decimal units while operating systems use binary units, causing the capacity difference."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "When should I use the binary base option?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Use binary when dealing with RAM, OS file sizes or programming storage calculations."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are data conversion results accurate?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. All calculations use exact multipliers for both binary and decimal systems, and results are rounded to 2 decimals."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GST Calculator — Inclusive & Exclusive Tax Calculation | Pro Unit Converter</title>
+
+<meta name="description" content="Free GST Calculator — Instantly calculate GST-inclusive and GST-exclusive amounts with full tax breakdown. Supports 5%, 12%, 18%, 28% GST rates. Perfect for business, billing and eCommerce.">
+<meta name="keywords" content="gst calculator, gst inclusive exclusive, gst tax calculator, gst india, gst percentage calculator, online gst tool, gst billing calculator">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="GST Calculator — Instant GST Breakdown">
+<meta property="og:description" content="Calculate GST inclusive & exclusive values with full tax breakdown. Fast and accurate.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://yourwebsite.com/gst.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>GST Calculator</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>GST Calculator</h1>
+    <p class="lead">
+      Calculate GST inclusive and exclusive values with detailed tax breakdown.  
+      Supports all common GST rates: 5%, 12%, 18%, 28% and custom values.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>GST Calculation Tool</h2>
+
+    <div class="converter">
+
+      <label for="price">Amount</label>
+      <input id="price" type="number" placeholder="Enter amount">
+
+      <label for="gstrate">GST Rate (%)</label>
+      <input id="gstrate" type="number" placeholder="GST %" value="18">
+
+      <button id="gstBtn" class="convert-btn">Calculate</button>
+
+      <div class="result-box">
+        <div id="gstResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO SECTION -->
+  <section class="card">
+    <h2>What is GST?</h2>
+    <p>
+      GST (Goods and Services Tax) is an indirect tax used in many countries including India.  
+      It is applied on the supply of goods and services at different tax rates.  
+      Common GST rates include: <strong>5%, 12%, 18% and 28%</strong>.
+    </p>
+
+    <h3>GST Formula</h3>
+    <p><strong>Inclusive GST:</strong> GST Amount = Price × (GST% / 100)</p>
+    <p><strong>Exclusive GST:</strong> Price = Base Amount + GST Amount</p>
+
+    <h3>Supported GST Calculations</h3>
+    <ul>
+      <li>GST amount (tax)</li>
+      <li>Price including GST</li>
+      <li>Price excluding GST</li>
+      <li>Custom GST percentages</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — GST Calculator</h2>
+
+    <div class="faq">
+      <h3>1. Does this calculator work for all GST rates?</h3>
+      <p>Yes, it supports all rates including 5%, 12%, 18%, 28% and any custom rate.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Are values rounded?</h3>
+      <p>Yes, all results are rounded to 2 decimal places for clarity.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Is the GST calculator accurate for business billing?</h3>
+      <p>Yes, the calculations are based on official GST formula standards.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this store any user data?</h3>
+      <p>No, everything is calculated offline in your browser.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// GST SCRIPT
+document.getElementById('gstBtn').addEventListener('click', () => {
+
+  const p = parseFloat(document.getElementById('price').value);
+  const r = parseFloat(document.getElementById('gstrate').value);
+  const out = document.getElementById('gstResult');
+
+  if (isNaN(p) || isNaN(r)) {
+    out.textContent = 'Please enter valid numbers.';
+    return;
+  }
+
+  const gstAmount = p * (r / 100);
+  const inclusive = p + gstAmount;
+  const exclusive = p / (1 + (r / 100));
+
+  out.innerHTML = `
+    <strong>GST Rate:</strong> ${r}% <br>
+    <strong>GST Amount:</strong> ${gstAmount.toFixed(2)} <br>
+    <strong>Price Including GST:</strong> ${inclusive.toFixed(2)} <br>
+    <strong>Base Price (Excluding GST):</strong> ${exclusive.toFixed(2)}
+  `;
+});
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Does this calculator work for all GST rates?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it supports all rates including 5%, 12%, 18%, 28% and any custom rate."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are GST values rounded?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, all results are rounded to 2 decimal places for clarity."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Area Converter — m², ft², Acres, Hectares & Land Measurement | Pro Unit Converter</title>
+
+<meta name="description" content="Free Area Converter — Convert square meters to square feet, acres to hectares, square yards, land area and more with accurate instant results.">
+<meta name="keywords" content="area converter, land converter, square meter to square feet, area calculator, acre to hectare, hectare to acre, sqft converter, sqm converter, land measurement tool">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Area Converter — m², ft², Acres, Hectares">
+<meta property="og:description" content="Convert area units like square meter, square feet, acre, hectare and more instantly. Accurate land measurement tool.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+<meta property="og:url" content="https://yourwebsite.com/area.html">
+
+<link rel="canonical" href="https://yourwebsite.com/area.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Area Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Area Converter</h1>
+    <p class="lead">
+      Convert area units including square meters (m²), square feet (ft²), acres, hectares and more.  
+      Ideal for land calculation, architecture, real estate, farming, mapping and engineering.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Area Conversion Tool</h2>
+
+    <div class="converter">
+
+      <label for="areaValue">Enter Value</label>
+      <input id="areaValue" type="number" placeholder="Enter number">
+
+      <label for="fromArea">From Unit</label>
+      <select id="fromArea">
+        <option value="sqm">Square Meter (m²)</option>
+        <option value="sqft">Square Feet (ft²)</option>
+        <option value="acre">Acre</option>
+        <option value="hectare">Hectare</option>
+      </select>
+
+      <label for="toArea">To Unit</label>
+      <select id="toArea">
+        <option value="sqm">Square Meter (m²)</option>
+        <option value="sqft">Square Feet (ft²)</option>
+        <option value="acre">Acre</option>
+        <option value="hectare">Hectare</option>
+      </select>
+
+      <button id="areaConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <div id="areaResult">—</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section class="card">
+    <h2>About This Area Converter</h2>
+    <p>
+      This free online Area Converter helps you convert instantly between commonly used area units such as 
+      square meters, square feet, acres and hectares. It is designed for students, real estate professionals, 
+      land surveyors, architects, farmers and anyone working with land or surface measurements.
+    </p>
+    <p>
+      All conversions are based on accurate mathematical formulas:
+    </p>
+    <ul>
+      <li>1 square meter = 10.7639 square feet</li>
+      <li>1 acre = 4046.8564224 square meters</li>
+      <li>1 hectare = 10000 square meters</li>
+      <li>1 square foot = 0.09290304 square meters</li>
+    </ul>
+    <p>
+      Every calculation happens instantly within your browser — no internet or server required.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>FAQ — Area Converter</h2>
+
+    <div class="faq">
+      <h3>1. How many square feet are in one acre?</h3>
+      <p>One acre = <strong>43,560 square feet (ft²)</strong>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. How many square meters are in one hectare?</h3>
+      <p>One hectare = <strong>10,000 square meters (m²)</strong>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. What is the most common land measurement unit?</h3>
+      <p>
+        In the metric system — square meters and hectares.  
+        In the imperial system — square feet and acres.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Are area conversion results accurate?</h3>
+      <p>
+        Yes. All results are calculated using verified international conversion values and rounded to 2 decimals.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Does this tool work offline?</h3>
+      <p>Yes. It runs entirely in your browser without internet.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter — All Rights Reserved.</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('areaConvertBtn').addEventListener('click', ()=> {
+
+  const value = parseFloat(document.getElementById('areaValue').value);
+  const from = document.getElementById('fromArea').value;
+  const to = document.getElementById('toArea').value;
+  const out = document.getElementById('areaResult');
+
+  if (isNaN(value)) {
+    out.textContent = 'Please enter a valid number.';
+    return;
+  }
+
+  const table = {
+    sqm: 1,
+    sqft: 0.09290304,
+    acre: 4046.8564224,
+    hectare: 10000
+  };
+
+  const sqm = value * table[from];
+  const result = sqm / table[to];
+
+  out.textContent = `${value} ${from} = ${result.toFixed(2)} ${to}`;
+});
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How many square feet are in one acre?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "One acre equals 43,560 square feet."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many square meters are in one hectare?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "One hectare equals 10,000 square meters."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are area conversion results accurate?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. All results are based on international conversion formulas and rounded to 2 decimals."
+   }
+  }
+ ]
+}
+</script>
+
+</body>
+</html>

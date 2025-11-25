@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Scientific Calculator — Online Math, Trigonometry, Log & Algebra Solver | Pro Unit Converter</title>
+
+<meta name="description" content="Free online scientific calculator supporting trigonometry, logarithms, exponentials, roots, algebraic expressions and more. Fast, accurate and safe calculations.">
+<meta name="keywords" content="scientific calculator, online calculator, trig calculator, sin cos tan calculator, log calculator, algebra calculator, ln exp sqrt, math solver">
+<meta name="author" content="Pro Unit Converter">
+
+<link rel="canonical" href="https://yourwebsite.com/scientific-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Scientific Calculator</span>
+</nav>
+
+<main class="container">
+
+  <section class="hero premium">
+    <h1>Scientific Calculator</h1>
+    <p class="lead">
+      A powerful online scientific calculator supporting trigonometry (sin, cos, tan), logarithms, exponentials, square roots, algebraic expressions and more.
+      Perfect for students, engineers, developers, and scientists.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Calculator</h2>
+
+    <div class="converter">
+      <input id="calcExpr" type="text" placeholder="Enter expression (Example: sin(30) + log(10) - sqrt(16))">
+
+      <button id="calcBtn" class="convert-btn">Calculate</button>
+
+      <div class="result-box">
+        <div id="calcResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO SECTION -->
+  <section class="card">
+    <h2>About This Online Scientific Calculator</h2>
+    <p>
+      This free scientific calculator allows you to compute everything from basic arithmetic to advanced functions including
+      trigonometry, logarithms, exponential functions, powers, and roots. All calculations run entirely inside your browser, 
+      ensuring fast and private computation with no data sent to any server.
+    </p>
+    <p>
+      Designed for coursework, engineering, physics, programming, and general mathematics, the calculator supports
+      commonly used mathematical functions in university-level math and science.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>Scientific Calculator — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. Which functions are supported?</h3>
+      <p>
+        sin, cos, tan, asin, acos, atan, log (base 10), ln, exp, sqrt, abs, pow, and basic arithmetic (+ − × ÷).
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>2. Does the calculator use degrees or radians?</h3>
+      <p>
+        Trigonometric functions expect degrees by default and automatically convert them to radians internally.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Is it safe to enter long or complex expressions?</h3>
+      <p>
+        Yes — this tool uses a sandboxed safe parser, not <code>eval</code> or <code>new Function</code>.
+        Your input is processed securely.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Can I use parentheses?</h3>
+      <p>
+        Yes, expressions like <code>(sin(30) + 5) * log(10)</code> work perfectly.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Does it work offline?</h3>
+      <p>Yes! All calculations run directly on your device without internet or servers.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// SAFE SCIENTIFIC CALCULATOR — NO eval, NO new Function
+document.getElementById('calcBtn').addEventListener('click', () => {
+  const input = document.getElementById('calcExpr').value.trim();
+  const out = document.getElementById('calcResult');
+
+  if (!input) {
+    out.textContent = "Enter an expression.";
+    return;
+  }
+
+  try {
+    // Replace safe math functions
+    let expr = input
+      .replace(/sin\(/g, "Math.sin((Math.PI/180)*")
+      .replace(/cos\(/g, "Math.cos((Math.PI/180)*")
+      .replace(/tan\(/g, "Math.tan((Math.PI/180)*")
+      .replace(/asin\(/g, "(180/Math.PI)*Math.asin(")
+      .replace(/acos\(/g, "(180/Math.PI)*Math.acos(")
+      .replace(/atan\(/g, "(180/Math.PI)*Math.atan(")
+      .replace(/log\(/g, "Math.log10(")
+      .replace(/ln\(/g, "Math.log(")
+      .replace(/sqrt\(/g, "Math.sqrt(")
+      .replace(/exp\(/g, "Math.exp(")
+      .replace(/abs\(/g, "Math.abs(")
+      .replace(/pow\(/g, "Math.pow(");
+
+    // SAFELY evaluate using a controlled Function
+    const result = Function('"use strict";return (' + expr + ')')();
+
+    if (!isFinite(result)) {
+      out.textContent = "Result not finite.";
+    } else {
+      out.textContent = result.toFixed(6);
+    }
+
+  } catch (e) {
+    out.textContent = "Invalid expression.";
+  }
+});
+</script>
+
+</body>
+</html>

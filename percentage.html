@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Percentage Calculator — % Increase, % Decrease, Ratios & Comparisons | Pro Unit Converter</title>
+
+<meta name="description" content="Free Percentage Calculator — Calculate percentage increase, percentage decrease, ratios, percent difference, comparative values and changes instantly.">
+<meta name="keywords" content="percentage calculator, percent increase, percent decrease, ratio calculator, percent change, online math calculator, percent difference tool">
+<meta name="author" content="Pro Unit Converter">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Percentage Calculator — Increase & Decrease Tool">
+<meta property="og:description" content="Calculate percent increase, decrease, ratios and changes instantly. Perfect for math, finance, school and analytics.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://yourwebsite.com/percentage.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Percentage Calculator</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Percentage Calculator</h1>
+    <p class="lead">Calculate percentage increase, percentage decrease, ratios and percent changes instantly and accurately.</p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Percentage Tool</h2>
+
+    <div class="converter">
+      <label>Original Value</label>
+      <input id="pOrig" type="number" placeholder="Enter original value">
+
+      <label>New Value</label>
+      <input id="pNew" type="number" placeholder="Enter new value">
+
+      <button id="pBtn" class="convert-btn">Compute % Change</button>
+
+      <div class="result-box">
+        <div id="pResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Info -->
+  <section class="card">
+    <h2 class="section-title">About This Percentage Calculator</h2>
+    <p>
+      This percentage calculator helps you compute percent increase, percent decrease, ratio comparisons, 
+      and general percent changes instantly. Whether you want to measure price changes, growth rates, 
+      savings, discounts, statistics, or math problems — this tool gives fast and accurate results.
+    </p>
+    <p>
+      Ideal for students, financial analysts, business owners, teachers, accountants and anyone 
+      who works with numbers on a daily basis.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>Percentage Calculator — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How is percent change calculated?</h3>
+      <p>Percent Change = ((New Value − Original Value) / Original Value) × 100.</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. What is percentage increase?</h3>
+      <p>If the new value is greater than the original value, the result is a positive percentage.</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. What is percentage decrease?</h3>
+      <p>If the new value is smaller than the original value, the result is a negative percentage.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Does this tool support ratios?</h3>
+      <p>Yes — percent change is effectively a ratio comparison between two values.</p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Why must the original value not be zero?</h3>
+      <p>Percent change formula divides by the original value — division by zero is undefined.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+// Percentage change with 2-decimal output
+document.getElementById('pBtn').addEventListener('click', ()=> {
+  const o = parseFloat(document.getElementById('pOrig').value);
+  const n = parseFloat(document.getElementById('pNew').value);
+  const out = document.getElementById('pResult');
+
+  if (isNaN(o) || isNaN(n) || o === 0) {
+    out.textContent = 'Please enter valid numbers (Original value must not be zero).';
+    return;
+  }
+
+  const change = ((n - o) / o) * 100;
+
+  out.innerHTML = `
+    <strong>Percent Change:</strong> ${change.toFixed(2)}%
+  `;
+});
+</script>
+
+</body>
+</html>

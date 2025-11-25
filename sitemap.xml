@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://yourdomain.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/contact.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/faq.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/privacy.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/terms.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/cookie.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/disclaimer.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/dmca.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/sitemap.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+
+  <!-- ALL TOOLS -->
+  <url><loc>https://yourdomain.com/length.html</loc></url>
+  <url><loc>https://yourdomain.com/temperature.html</loc></url>
+  <url><loc>https://yourdomain.com/speed.html</loc></url>
+  <url><loc>https://yourdomain.com/time.html</loc></url>
+  <url><loc>https://yourdomain.com/volume.html</loc></url>
+  <url><loc>https://yourdomain.com/area.html</loc></url>
+  <url><loc>https://yourdomain.com/data.html</loc></url>
+  <url><loc>https://yourdomain.com/energy.html</loc></url>
+  <url><loc>https://yourdomain.com/power.html</loc></url>
+  <url><loc>https://yourdomain.com/scientific.html</loc></url>
+  <url><loc>https://yourdomain.com/age.html</loc></url>
+  <url><loc>https://yourdomain.com/gst.html</loc></url>
+  <url><loc>https://yourdomain.com/loan.html</loc></url>
+  <url><loc>https://yourdomain.com/discount.html</loc></url>
+  <url><loc>https://yourdomain.com/percentage.html</loc></url>
+  <url><loc>https://yourdomain.com/area-volume.html</loc></url>
+  <url><loc>https://yourdomain.com/cooking.html</loc></url>
+
+</urlset>

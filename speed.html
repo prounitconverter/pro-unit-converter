@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Speed Converter — Convert km/h, m/s, mph & knots | Pro Unit Converter</title>
+
+<meta name="description" content="Fast and accurate Speed Converter for km/h, m/s, mph and knots. Perfect for physics students, pilots, drivers, engineers and navigation experts.">
+<meta name="keywords" content="speed converter, km/h to m/s, mph to kmh, knots converter, speed calculator, velocity converter, fast speed conversion tool, unit converter">
+
+<link rel="canonical" href="https://yourwebsite.com/speed.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="premium">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" width="44" height="44" alt="Pro Unit Converter Logo">
+    <span>Pro Unit Converter</span>
+  </a>
+  <button id="darkModeToggle" class="btn">🌙</button>
+</header>
+
+<nav class="breadcrumb">
+  <a href="index.html">Home</a> › 
+  <span>Speed Converter</span>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero premium">
+    <h1>Speed Converter</h1>
+    <p class="lead">
+      Convert instantly between km/h, m/s, mph and knots — ideal for transportation, physics, aviation, engineering and navigation.
+    </p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="card">
+    <h2>Speed Conversion Tool</h2>
+
+    <div class="converter">
+      <label for="speedValue">Enter speed:</label>
+      <input id="speedValue" type="number" placeholder="Enter value">
+
+      <label>From:</label>
+      <select id="fromSpeed">
+        <option value="kmh">Kilometer per hour (km/h)</option>
+        <option value="ms">Meter per second (m/s)</option>
+        <option value="mph">Miles per hour (mph)</option>
+        <option value="knot">Knot (kn)</option>
+      </select>
+
+      <label>To:</label>
+      <select id="toSpeed">
+        <option value="kmh">Kilometer per hour (km/h)</option>
+        <option value="ms">Meter per second (m/s)</option>
+        <option value="mph">Miles per hour (mph)</option>
+        <option value="knot">Knot (kn)</option>
+      </select>
+
+      <button id="speedConvertBtn" class="convert-btn">Convert Now</button>
+
+      <div class="result-box">
+        <h3>Result:</h3>
+        <div id="speedResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO / EXTRA CONTENT -->
+  <section class="card">
+    <h2>About This Speed Converter</h2>
+    <p>
+      This professional speed converter allows you to convert between km/h, m/s, mph and knots with absolute precision. 
+      It is useful for:
+    </p>
+    <ul>
+      <li>Physics and engineering calculations</li>
+      <li>Vehicle and driving speed conversions</li>
+      <li>Aviation and marine navigation</li>
+      <li>Sports science and treadmill speed conversions</li>
+      <li>Academic and research work</li>
+    </ul>
+    <p>
+      All calculations happen directly inside your browser — fast, secure and offline capable.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-section">
+    <h2>Speed Converter — FAQ</h2>
+
+    <div class="faq">
+      <h3>1. How do I convert km/h to m/s?</h3>
+      <p>1 km/h = 0.2777777778 m/s (divide km/h by 3.6).</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. How fast is 1 knot?</h3>
+      <p>1 knot = 1.852 km/h (mainly used in ships and aircraft).</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Does the tool work offline?</h3>
+      <p>Yes — the converter works fully offline and does not require internet.</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Are the calculations accurate?</h3>
+      <p>
+        Yes — all conversions use internationally accepted speed conversion factors 
+        and round results to 2 decimal places.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>5. Is this tool free?</h3>
+      <p>Yes — this speed converter is free to use forever.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-flex">
+    <p>© 2025 Pro Unit Converter</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById('speedConvertBtn').addEventListener('click', () => {
+  const v = parseFloat(document.getElementById('speedValue').value);
+  const from = document.getElementById('fromSpeed').value;
+  const to = document.getElementById('toSpeed').value;
+  const out = document.getElementById('speedResult');
+
+  if (isNaN(v)) {
+    out.textContent = "Please enter a valid number.";
+    return;
+  }
+
+  // Base values in m/s
+  const table = {
+    kmh: 0.2777777778,
+    ms: 1,
+    mph: 0.44704,
+    knot: 0.514444
+  };
+
+  const msValue = v * table[from];
+  const result = msValue / table[to];
+
+  out.textContent = `${v} ${from} = ${result.toFixed(2)} ${to}`;
+});
+</script>
+
+</body>
+</html>
